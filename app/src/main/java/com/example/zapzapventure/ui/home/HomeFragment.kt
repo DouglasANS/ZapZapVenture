@@ -11,7 +11,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zapzapventure.databinding.FragmentHomeBinding
+import com.example.zapzapventure.model.Contact
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -39,17 +41,23 @@ class HomeFragment : Fragment() {
         homeViewModel.contactList.observe(viewLifecycleOwner, Observer {
             adapter.setContactsList(it)
         })
+        contactsList.adapter = adapter
+
 
         val db = Firebase.firestore
 
         val current = FirebaseAuth.getInstance().currentUser
+
+
 
         if (current != null) {
            binding.textNameWelcome.text = "Bem Vindo: ${current.displayName}"
             binding.textEmailWelcome.text = " So para lembrar seu email é: ${current.email}"
         }
 
-        contactsList.adapter = adapter
+
+
+
 
         return root
     }
