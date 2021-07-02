@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "591533214371",
+    "project_id": "zapzapventure",
+    "storage_bucket": "zapzapventure.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591533214371:android:91cf7654c2807154164d16",
+        "android_client_info": {
+          "package_name": "com.example.zapzapventure"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591533214371-t3v05gdgl3rb8ufige5opfig58ase2ij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.zapzapventure",
+            "certificate_hash": "91cb1bc1879ecccb416911bcc4e715bf29302434"
+          }
+        },
+        {
+          "client_id": "591533214371-ma0lj9mnmru82a2kdmd7hd8p4i7jk3k8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZ8BfoqyZcWW0EsaGmssNFxFyxXyUtH-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591533214371-ma0lj9mnmru82a2kdmd7hd8p4i7jk3k8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
