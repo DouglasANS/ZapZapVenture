@@ -1,6 +1,7 @@
 package com.example.zapzapventure.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +11,13 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zapzapventure.databinding.FragmentHomeBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class HomeFragment : Fragment() {
 
+    private val TAG = "Teste"
     private lateinit var homeViewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
 
@@ -34,6 +39,15 @@ class HomeFragment : Fragment() {
         homeViewModel.contactList.observe(viewLifecycleOwner, Observer {
             adapter.setContactsList(it)
         })
+
+        val db = Firebase.firestore
+
+        val current = FirebaseAuth.getInstance().currentUser
+
+        if (current != null) {
+           binding.textNameWelcome.text = "Bem Vindo: ${current.displayName}"
+            binding.textEmailWelcome.text = " So para lembrar seu email é: ${current.email}"
+        }
 
         contactsList.adapter = adapter
 

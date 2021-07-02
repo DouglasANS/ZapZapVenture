@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_conf
             )
         )
-
         binding.btnSair.setOnClickListener {
             AuthUI.getInstance().signOut(this).addOnCompleteListener {
                 val intent = Intent(this, LoginActivity::class.java)
