@@ -4,24 +4,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zapzapventure.R
 import com.example.zapzapventure.model.Message
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.util.*
+import kotlin.collections.ArrayList
 
-class ChatAdapter(val onChatSelected: (message: Message) -> Unit) : RecyclerView.Adapter<ChatAdapter.ViewHolder>() {
-    var chat: ArrayList<Message> = ArrayList<Message>()
+class ChatAdapter() : RecyclerView.Adapter<ChatAdapter.ViewHolder>() {
+    var messages: ArrayList<Message> = ArrayList<Message>()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        private val MessageSend: EditText = itemView.findViewById(R.id.txtMessage)
-        private val MessageText: EditText = itemView.findViewById(R.id.txtMessage)
-        val sendButton: FloatingActionButton = itemView.findViewById(R.id.btnSend)
+    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        private val MessageSend: TextView = itemView.findViewById(R.id.send_message)
+        private val MessageTime: TextView = itemView.findViewById(R.id.messageTime)
 
-        fun setChat(chat: Message){
+        fun setMessage(msg: Message){
+            MessageSend.text = msg.message
+            MessageTime.text = timeToString(msg.time)
+        }
 
+        private fun timeToString(time: Long): String {
+            val date = Date(time)
+            return date.toString()
         }
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatAdapter.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -32,14 +43,11 @@ class ChatAdapter(val onChatSelected: (message: Message) -> Unit) : RecyclerView
     }
 
     override fun onBindViewHolder(holder: ChatAdapter.ViewHolder, position: Int) {
-        holder.setChat(chat[position])
-        holder.sendButton.setOnClickListener {
-            onChatSelected(chat[position])
-        }
+        holder.setMessage(messages[position])
     }
 
     override fun getItemCount(): Int {
-        return chat.size
+        return messages.size
     }
 
 }

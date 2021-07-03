@@ -23,8 +23,6 @@ class HomeAdapter(val onContactSelected : (contact: Contact) -> Unit): RecyclerV
 
             //TODO: set image
 
-
-
         }
     }
 

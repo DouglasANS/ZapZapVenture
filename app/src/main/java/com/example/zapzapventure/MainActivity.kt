@@ -1,7 +1,6 @@
 package com.example.zapzapventure
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -23,8 +22,6 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
 
         val navView: BottomNavigationView = binding.navView
 

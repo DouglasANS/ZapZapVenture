@@ -2,6 +2,8 @@ package com.example.zapzapventure.ui.chat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
+import androidx.recyclerview.widget.RecyclerView
 import com.example.zapzapventure.databinding.ActivityChatBinding
 import com.example.zapzapventure.repository.ChatRepository
 import com.example.zapzapventure.repository.UserRepository
@@ -23,13 +25,14 @@ class ChatActivity : AppCompatActivity() {
         }
 
         val me = UserRepository.myEmail()
-        val messages = binding.messages
 
-        /*ChatRepository.getMessages(chatId){
-            messages.text.clear()
-            for(msg in it){
-                messages.text.append("${msg.message}\n")
-            }
+        val chatList: RecyclerView = binding.messages
+        val adapter: ChatAdapter = ChatAdapter()
+
+        chatList.adapter = adapter
+
+        ChatRepository.getMessages(chatId){
+            adapter.messages = it
         }
 
         binding.btnSend.setOnClickListener{
@@ -38,7 +41,7 @@ class ChatActivity : AppCompatActivity() {
             if (me != null) {
                 ChatRepository.addMessageToChat(chatId, me, msg)
             }
-        }*/
+        }
 
     }
 }

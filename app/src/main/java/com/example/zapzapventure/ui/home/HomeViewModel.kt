@@ -7,8 +7,7 @@ import com.example.zapzapventure.model.Contact
 import com.example.zapzapventure.repository.UserRepository
 
 class HomeViewModel : ViewModel() {
-
-
+    
     private val _ContactsList = MutableLiveData<ArrayList<Contact>>().apply {
         UserRepository.getMyContacts{
             value = it
