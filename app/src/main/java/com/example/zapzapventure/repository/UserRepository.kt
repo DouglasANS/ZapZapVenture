@@ -8,9 +8,14 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 object UserRepository {
-    private val TAG: String = "UserRepository"
+    private const val TAG: String = "UserRepository"
+    private const val USERS: String = "users"
+    private val db by lazy {Firebase.firestore}
 
-    private val db by lazy { Firebase.firestore }
+    fun myEmail(): String?{
+        return FirebaseAuth.getInstance().currentUser?.email
+    }
+
     fun addUser(user: User, onSuccess: () -> Unit, onFail: (error: String) -> Unit){
         db.collection("users") //email chave primaria
             .document(user.email)
@@ -26,7 +31,7 @@ object UserRepository {
     fun getMyContacts(onComplete: (ArrayList<Contact>) -> Unit) {
         val current = FirebaseAuth.getInstance().currentUser?.apply {
             if(this.email != null){
-                val docRef = db.collection("users")
+                val docRef = db.collection(USERS)
                     .document(this.email!!)
                     .collection("contacts")
                 docRef.get()
@@ -54,6 +59,5 @@ object UserRepository {
         }
         Log.e(TAG, "Current user not found")
         onComplete(ArrayList<Contact>())
-
     }
 }

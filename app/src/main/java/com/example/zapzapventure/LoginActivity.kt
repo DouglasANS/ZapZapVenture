@@ -44,26 +44,33 @@ class LoginActivity : AppCompatActivity() {
         }
     }
     private fun activityResult(resultCode: Int, data: Intent?) {
-
         val response = IdpResponse.fromResultIntent(data)
 
         if (resultCode == Activity.RESULT_OK) {
-            FirebaseAuth.getInstance().currentUser?.apply {
-                val user: User = User(name = this.displayName ?: "Sem Nome", email = this.email ?: "Sem Email", id = this.uid)
-                UserRepository.addUser(user, { goToMain() }, { failToLogin(it)})
+            // Successfully signed in
+            val current = FirebaseAuth.getInstance().currentUser?.apply {
+                val user: User = User(
+                    name = this.displayName ?: "NO NAME",
+                    email = this.email ?: "NO EMAIL"
+                )
+                UserRepository.addUser(user, {
+                    goToMain()
+                }, {
+                    failToLogin(it)
+                })
             }
         } else {
             failToLogin(response?.error?.message)
         }
+
     }
 
-    private fun failToLogin(message: String?) {
-        //Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-        //val i = Intent(this, LoginActivity::class.java)
-        //startActivity(i)
+    fun failToLogin(message: String?) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
-    private fun goToMain() {
-        val intent = Intent(this, MainActivity::class.java)
+
+    fun goToMain() {
+        val intent: Intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
     }

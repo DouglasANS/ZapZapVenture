@@ -61,4 +61,5 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:6.4.0'
 
     implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation("androidx.cardview:cardview:1.0.0")
 }

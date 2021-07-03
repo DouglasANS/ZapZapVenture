@@ -1,18 +1,22 @@
 package com.example.zapzapventure.ui.dashboard
 
 import android.os.Bundle
+import android.text.Editable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.zapzapventure.R
 import com.example.zapzapventure.databinding.FragmentDashboardBinding
+import com.example.zapzapventure.model.Contact
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 
 class DashboardFragment : Fragment() {
 
+    private val TAG = "Teste 2"
     private lateinit var dashboardViewModel: DashboardViewModel
     private var _binding: FragmentDashboardBinding? = null
 
@@ -29,12 +33,53 @@ class DashboardFragment : Fragment() {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        //val db3 = FirebaseFirestore.getInstance()
+
+        fun AdicionarContato(){
+            var nome = binding.etAdicionarName.text.toString()
+            var email = binding.etAdicionarEmail.text.toString()
+
+            val current = FirebaseAuth.getInstance().currentUser
+
+            val item = hashMapOf(
+                "name" to nome,
+                "email" to email,
+            )
+
+            val db1 = FirebaseFirestore.getInstance().collection("users").document(current!!.email!!)
+                .collection("contacts")
+                .document(email)
+                .set(item)
+                .addOnCompleteListener {
+                    Log.d(TAG, "Deu bom!")
+                }.addOnFailureListener{e -> Log.w(TAG, "Deu ruim", e)}
+        }
+
+        binding.adicionarValor.setOnClickListener {
+            AdicionarContato()
+
+        }
+
+
+        //val usuario = hashMapOf(
+        //    "name" to nome.toString(),
+        //    "email" to email.toString()
+        //)
+        // binding.adicionarValor.setOnClickListener {
+        //     db3.collection("users").document("asssssad" /*currentuser*/ ).set(usuario)
+        //        .addOnSuccessListener { Log.d(TAG, "Deu bom!") }
+        //        .addOnFailureListener { e -> Log.w(TAG, "Deu ruim", e) }
+        // }
+
+
+        //val newUser = db.collection("users").document()
+
+        //newUser.set("asdasda@hotmail.com")
+
+
         return root
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
