@@ -15,11 +15,7 @@
         android:id="@+id/navigation_conf"
         android:icon="@drawable/ic_baseline_settings_24"
         android:title="@string/settings" />
-    <item
-        android:id="@+id/navigation_exit"
 
-        android:icon="@drawable/ic_baseline_login_24"
-        android:title="@string/Exit" />
 
 
 </menu>

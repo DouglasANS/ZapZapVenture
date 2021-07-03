@@ -7,14 +7,15 @@
     android:layout_height="match_parent">
 
 
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="339dp"
+        android:layout_height="55dp"
         android:background="@color/purple"
         app:itemTextColor="@color/white"
+        android:backgroundTint="@color/purple"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
@@ -33,16 +34,19 @@
         app:layout_constraintVertical_bias="1.0"
         app:navGraph="@navigation/mobile_navigation" />
 
-    <Button
+    <TextView
         android:id="@+id/btnSair"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/sair"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        android:layout_width="74dp"
+        android:layout_height="55dp"
+        android:background="@color/purple"
+        android:gravity="center"
+        android:text="sair"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/nav_view"
+        app:layout_constraintTop_toTopOf="@+id/nav_view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

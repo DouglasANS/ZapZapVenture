@@ -34,6 +34,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_conf
             )
         )
+        binding.btnSair.setOnClickListener {
+            AuthUI.getInstance().signOut(this).addOnCompleteListener {
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
 
 
 
@@ -41,15 +48,5 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.navigation_exit){
-            AuthUI.getInstance().signOut(this).addOnCompleteListener {
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
-                return true
-        }
-        return super.onOptionsItemSelected(item)
-    }
+
 }
