@@ -6,9 +6,8 @@
     android:layout_height="wrap_content"
     android:padding="6dp">
 
-
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/send_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -21,4 +20,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

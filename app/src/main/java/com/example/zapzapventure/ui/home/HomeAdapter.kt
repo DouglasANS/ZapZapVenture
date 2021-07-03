@@ -20,11 +20,8 @@ class HomeAdapter(val onContactSelected : (contact: Contact) -> Unit): RecyclerV
         fun setUser(Contact: Contact){
             ContactName.text = Contact.name
             ContactDetail.text = Contact.email
-<<<<<<< HEAD
 
-=======
             //TODO: set image
->>>>>>> b0d75ff2afef626ee1a5c46e914f43f212579e38
         }
     }
 

@@ -1,4 +1,4 @@
-package com.example.zapzapventure
+package com.example.zapzapventure.ui.chat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,8 +8,11 @@ import com.example.zapzapventure.repository.UserRepository
 
 class ChatActivity : AppCompatActivity() {
     lateinit var binding: ActivityChatBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -22,7 +25,7 @@ class ChatActivity : AppCompatActivity() {
         val me = UserRepository.myEmail()
         val messages = binding.messages
 
-        ChatRepository.getMessages(chatId){
+        /*ChatRepository.getMessages(chatId){
             messages.text.clear()
             for(msg in it){
                 messages.text.append("${msg.message}\n")
@@ -35,7 +38,7 @@ class ChatActivity : AppCompatActivity() {
             if (me != null) {
                 ChatRepository.addMessageToChat(chatId, me, msg)
             }
-        }
+        }*/
 
     }
 }
