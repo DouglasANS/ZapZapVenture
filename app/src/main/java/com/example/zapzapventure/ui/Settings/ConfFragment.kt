@@ -34,6 +34,7 @@ class ConfFragment : Fragment() {
         _binding = FragmentConfBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        /*
         val textView: TextView = binding.textConf
         confViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
@@ -42,6 +43,7 @@ class ConfFragment : Fragment() {
         binding.btnsair.setOnClickListener {
             Firebase.auth.signOut()
         }
+        */
         return root
     }
 

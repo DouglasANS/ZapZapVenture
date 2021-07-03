@@ -7,16 +7,16 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.zapzapventure.ui.home.HomeFragment"
-        android:label="fragment_home"
+        android:label="Zapzap Venturus"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_conf"
         android:name="com.example.zapzapventure.ui.Settings.ConfFragment"
-        android:label="fragment_conf"
+        android:label="Configurações"
         tools:layout="@layout/fragment_conf" />
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.zapzapventure.ui.dashboard.DashboardFragment"
-        android:label="fragment_dashboard"
+        android:label="Contatos"
         tools:layout="@layout/fragment_dashboard" />
 </navigation>

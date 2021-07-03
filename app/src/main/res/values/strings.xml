@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">ZapZap Venture</string>
     <string name="title_home">Home</string>
-    <string name="Contact">Contact</string>
-    <string name="Chat">Chat</string>
+    <string name="Contact">Contatos</string>
+    <string name="Chat">Conversas</string>
 
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -10,7 +10,7 @@
 
     <string name="Exit">Exit</string>
     <string name="WelcomeMessage">Bem-vindo(a) ao Zapzap Venture</string>
-    <string name="message">Toque em "Entrar" para continuar</string>
+    <string name="message">Toque em Entrar para continuar</string>
     <string name="privatemessage">Termos de serviços e Politica de privacidade Zapzap Venture.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -21,7 +21,7 @@
 
     <string name="contact_list">Contacts List</string>
     <string name="message_list">Message List</string>
-    <string name="settings">Settings</string>
+    <string name="settings">Configurações</string>
 
     <string name="cardview_conta">Conta</string>
     <string name="cardview_conversa">Conversa</string>

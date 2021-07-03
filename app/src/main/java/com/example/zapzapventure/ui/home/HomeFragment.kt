@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
 
         if (current != null) {
            binding.textNameWelcome.text = "Bem Vindo: ${current.displayName}"
-            binding.textEmailWelcome.text = " So para lembrar seu email é: ${current.email}"
+            binding.textEmailWelcome.text = " E-mail: ${current.email}"
         }
 
         return root
