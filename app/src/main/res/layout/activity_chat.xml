@@ -13,11 +13,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:clickable="true"
         android:backgroundTint="#90EE90"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_send" />
+        app:srcCompat="@color/purple_700" />
 
     <EditText
         android:id="@+id/txtMessage"
