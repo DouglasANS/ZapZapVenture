@@ -9,20 +9,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.zapzapventure.R
 import com.example.zapzapventure.model.Contact
 
-class HomeAdapter(): RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+class HomeAdapter(val onContactSelected : (contact: Contact) -> Unit): RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
     var contact: ArrayList<Contact> = ArrayList<Contact>()
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         private val ContactName: TextView = itemView.findViewById(R.id.contact_name)
         private val ContactDetail: TextView = itemView.findViewById(R.id.contact_details)
-        private val ContactImage: ImageView = itemView.findViewById(R.id.contact_image)
+         val send: ImageView = itemView.findViewById(R.id.imgsend)
 
         fun setUser(Contact: Contact){
             ContactName.text = Contact.name
             ContactDetail.text = Contact.email
-            //TODO: set image
-        }
 
+        }
     }
 
     fun setContactsList(Contacts: ArrayList<Contact>){
@@ -40,6 +39,9 @@ class HomeAdapter(): RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: HomeAdapter.ViewHolder, position: Int) {
         holder.setUser(contact[position])
+        holder.send.setOnClickListener {
+            onContactSelected(contact[position])
+        }
     }
 
     override fun getItemCount(): Int {
