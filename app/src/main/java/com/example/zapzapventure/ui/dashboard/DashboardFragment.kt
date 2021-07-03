@@ -33,23 +33,32 @@ class DashboardFragment : Fragment() {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-
         //val db3 = FirebaseFirestore.getInstance()
 
-        val nome = binding.etAdicionarName.text.toString()
-        val email = binding.etAdicionarEmail.text.toString()
+        fun AdicionarContato(){
+            var nome = binding.etAdicionarName.text.toString()
+            var email = binding.etAdicionarEmail.text.toString()
 
-        val current = FirebaseAuth.getInstance().currentUser
+            val current = FirebaseAuth.getInstance().currentUser
 
-        val item = hashMapOf(
-            "name" to nome,
-            "email" to email
-        )
-        binding.adicionarValor.setOnClickListener {
-            val db1 = FirebaseFirestore.getInstance().document("users/${current!!.email}")
-            db1.collection("contacts").document(email).set(item).addOnCompleteListener { Log.d(TAG, "Deu bom!")  }.addOnFailureListener{e -> Log.w(TAG, "Deu ruim", e)}
+            val item = hashMapOf(
+                "name" to nome,
+                "email" to email,
+            )
+
+            val db1 = FirebaseFirestore.getInstance().collection("users").document(current!!.email!!)
+                .collection("contacts")
+                .document(email)
+                .set(item)
+                .addOnCompleteListener {
+                    Log.d(TAG, "Deu bom!")
+                }.addOnFailureListener{e -> Log.w(TAG, "Deu ruim", e)}
         }
 
+        binding.adicionarValor.setOnClickListener {
+            AdicionarContato()
+
+        }
 
 
         //val usuario = hashMapOf(

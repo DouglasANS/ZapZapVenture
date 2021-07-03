@@ -9,12 +9,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sair">Sair</string>
     <string name="textview">TextView</string>
-<<<<<<< HEAD
+
     <string name="adicionar">Adicionar</string>
-=======
     <string name="cardview_conta">Conta</string>
     <string name="cardview_conversa">Conversa</string>
     <string name="cardview_notificacao">Notificação</string>
     <string name="cardview_logout">Logout</string>
->>>>>>> b0d75ff2afef626ee1a5c46e914f43f212579e38
+
 </resources>
