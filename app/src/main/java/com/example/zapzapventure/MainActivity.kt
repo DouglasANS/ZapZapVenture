@@ -1,6 +1,7 @@
 package com.example.zapzapventure
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.zapzapventure.databinding.ActivityMainBinding
 import com.firebase.ui.auth.AuthUI
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -20,6 +22,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
 
         val navView: BottomNavigationView = binding.navView
 
