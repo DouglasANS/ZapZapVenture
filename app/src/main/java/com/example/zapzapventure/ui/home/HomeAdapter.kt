@@ -22,7 +22,6 @@ class HomeAdapter(): RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
             ContactDetail.text = Contact.email
             //TODO: set image
         }
-
     }
 
     fun setContactsList(Contacts: ArrayList<Contact>){
