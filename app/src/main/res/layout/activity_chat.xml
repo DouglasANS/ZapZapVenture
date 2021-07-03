@@ -13,13 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-<<<<<<< HEAD
         android:clickable="true"
         android:backgroundTint="@color/green_whats"
-=======
-        android:backgroundTint="#90EE90"
-        android:clickable="true"
->>>>>>> 71861f1eeafd2a55f3621eab741efd02dfdb2d32
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@color/purple_700" />
