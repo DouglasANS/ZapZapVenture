@@ -54,8 +54,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/cardview_logout"
                 android:textSize="@dimen/cardview_text_size"
-                android:padding="10dp"
-                android:onClick="">
+                android:padding="10dp">
             </TextView>
 
         </LinearLayout>
