@@ -22,7 +22,10 @@ class HomeAdapter(val onContactSelected : (contact: Contact) -> Unit): RecyclerV
             ContactDetail.text = Contact.email
 
             //TODO: set image
+<<<<<<< HEAD
+=======
 
+>>>>>>> 09a5fd5275418063aad4ecb5fde7a25c0eaef609
         }
     }
 
