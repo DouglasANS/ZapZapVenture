@@ -60,7 +60,6 @@ class DashboardFragment : Fragment() {
 
         }
 
-
         //val usuario = hashMapOf(
         //    "name" to nome.toString(),
         //    "email" to email.toString()

@@ -27,6 +27,7 @@
     <string name="cardview_conversa">Conversa</string>
     <string name="cardview_notificacao">Notificação</string>
     <string name="cardview_logout">Logout</string>
+    <string name="btn_Add">Adicionar</string>
 
 </resources>
 
