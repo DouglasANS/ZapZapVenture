@@ -24,9 +24,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        toolbar.setTitleTextColor(Color.WHITE)
 
         val providers = arrayListOf(
             AuthUI.IdpConfig.EmailBuilder().build() ,

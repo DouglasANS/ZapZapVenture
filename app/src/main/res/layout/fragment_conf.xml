@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.Settings.ConfFragment">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/gradiente_toolbar" />
-
     <TextView
         android:id="@+id/text_conf"
         android:layout_width="match_parent"

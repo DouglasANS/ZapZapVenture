@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZapZapVenture">
         <activity android:name=".ChatActivity"></activity>
-        <activity android:name=".SplashScreen">
+        <activity android:name=".SplashScreen" android:theme="@style/Theme.ZapZapVentureNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

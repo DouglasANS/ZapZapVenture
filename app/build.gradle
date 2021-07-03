@@ -62,4 +62,8 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-firestore-ktx'
     implementation("androidx.cardview:cardview:1.0.0")
+    //redondo a imagem
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+
 }
