@@ -46,18 +46,12 @@ class HomeFragment : Fragment() {
         })
         contactsList.adapter = adapter
 
-
-
-
-        val db = Firebase.firestore
-
         val current = FirebaseAuth.getInstance().currentUser
 
         if (current != null) {
            binding.textNameWelcome.text = "Bem Vindo: ${current.displayName}"
             binding.textEmailWelcome.text = " So para lembrar seu email é: ${current.email}"
         }
-
 
         return root
     }
